@@ -8,13 +8,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    FooterComponent
+  
   ],
   imports: [
     CommonModule,
@@ -24,10 +24,10 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatSidenavModule,   
     MatListModule,
+    RouterModule
+    
   ],
-  exports: [
-    HeaderComponent,
-    FooterComponent,
+  exports: [   
     MatButtonModule,
     MatDividerModule,
     MatToolbarModule,
@@ -37,4 +37,4 @@ import { MatListModule } from '@angular/material/list';
   ]
 
 })
-export class SharedlModule { }
+export class SharedModule { }

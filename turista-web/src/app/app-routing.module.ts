@@ -9,37 +9,47 @@ import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { OfertasComponent } from './pages/ofertas/ofertas.component';
 import { VehiculosComponent } from './pages/vehiculos/vehiculos.component';
 
-const routes: Routes = [{
-  path: '',
-  component: DefaultComponent,
-  children: [{
+const routes: Routes = [
+  {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  }, {
-    path: 'home',
-    component: HomeComponent
-  }, {
-    path: 'app-alojamientos',
-    component: AlojamientosComponent
-  },{
-    path: 'app-vehiculos',
-    component: VehiculosComponent
-  },{
-    path: 'app-ofertas',
-    component: OfertasComponent
-  },{
-    path: 'app-nosotros',
-    component: NosotrosComponent
-  },{
-    path: 'app-faqs',
-    component: FaqsComponent
-  },{
-    path: 'app-contacto',
-    component: ContactoComponent
+    component: DefaultComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+      },
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'alojamientos',
+        component: AlojamientosComponent
+      },
+      {
+        path: 'contacto',
+        component: ContactoComponent
+      },
+      {
+        path: 'faqs',
+        component: FaqsComponent
+      },
+      {
+        path: 'nosotros',
+        component: NosotrosComponent
+      },
+      {
+        path: 'ofertas',
+        component: OfertasComponent
+      },
+      {
+        path: 'vehiculos',
+        component: VehiculosComponent
+      }
+    ]
   }
-  ]
-}];
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

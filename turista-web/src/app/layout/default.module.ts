@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedlModule } from '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 import { OfertasComponent } from '../pages/ofertas/ofertas.component';
 import { AlojamientosComponent } from '../pages/alojamientos/alojamientos.component';
 import { VehiculosComponent } from '../pages/vehiculos/vehiculos.component';
@@ -12,6 +12,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from '../pages/home/home.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { HeaderComponent } from '../shared/components/header/header.component';
+import { FooterComponent } from '../shared/components/footer/footer.component';
 
 
 @NgModule({
@@ -24,14 +26,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     ContactoComponent,
     DefaultComponent,
     HomeComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
-    SharedlModule,
+    SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule,
-    SharedlModule,
+    RouterModule, 
     
   ],
   exports: [
@@ -43,6 +46,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     ContactoComponent,
     DefaultComponent,
     HomeComponent,
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class DefaultModule { }

@@ -6,6 +6,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 
 
@@ -20,7 +22,19 @@ import { FooterComponent } from './components/footer/footer.component';
     MatDividerModule,
     MatToolbarModule,
     MatIconModule,
+    MatSidenavModule,   
+    MatListModule,
   ],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    MatButtonModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,   
+    MatListModule,
+  ]
 
 })
 export class SharedlModule { }

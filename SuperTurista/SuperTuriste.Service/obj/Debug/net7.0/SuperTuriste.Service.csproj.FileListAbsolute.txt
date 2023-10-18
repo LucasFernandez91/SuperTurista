@@ -1,0 +1,17 @@
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\bin\Debug\net7.0\SuperTuriste.Service.deps.json
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\bin\Debug\net7.0\SuperTuriste.Service.dll
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\bin\Debug\net7.0\SuperTuriste.Service.pdb
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\bin\Debug\net7.0\SuperTurista.Core.dll
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\bin\Debug\net7.0\SuperTurista.DataAccess.dll
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\bin\Debug\net7.0\SuperTurista.Core.pdb
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\bin\Debug\net7.0\SuperTurista.DataAccess.pdb
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\obj\Debug\net7.0\SuperTuriste.Service.csproj.AssemblyReference.cache
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\obj\Debug\net7.0\SuperTuriste.Service.GeneratedMSBuildEditorConfig.editorconfig
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\obj\Debug\net7.0\SuperTuriste.Service.AssemblyInfoInputs.cache
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\obj\Debug\net7.0\SuperTuriste.Service.AssemblyInfo.cs
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\obj\Debug\net7.0\SuperTuriste.Service.csproj.CoreCompileInputs.cache
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\obj\Debug\net7.0\SuperTuriste.Service.csproj.CopyComplete
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\obj\Debug\net7.0\SuperTuriste.Service.dll
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\obj\Debug\net7.0\refint\SuperTuriste.Service.dll
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\obj\Debug\net7.0\SuperTuriste.Service.pdb
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTuriste.Service\obj\Debug\net7.0\ref\SuperTuriste.Service.dll

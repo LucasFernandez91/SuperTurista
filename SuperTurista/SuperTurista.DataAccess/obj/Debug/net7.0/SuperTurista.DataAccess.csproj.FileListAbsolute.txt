@@ -1,0 +1,15 @@
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\bin\Debug\net7.0\SuperTurista.DataAccess.deps.json
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\bin\Debug\net7.0\SuperTurista.DataAccess.dll
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\bin\Debug\net7.0\SuperTurista.DataAccess.pdb
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\bin\Debug\net7.0\SuperTurista.Core.dll
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\bin\Debug\net7.0\SuperTurista.Core.pdb
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\obj\Debug\net7.0\SuperTurista.DataAccess.csproj.AssemblyReference.cache
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\obj\Debug\net7.0\SuperTurista.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\obj\Debug\net7.0\SuperTurista.DataAccess.AssemblyInfoInputs.cache
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\obj\Debug\net7.0\SuperTurista.DataAccess.AssemblyInfo.cs
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\obj\Debug\net7.0\SuperTurista.DataAccess.csproj.CoreCompileInputs.cache
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\obj\Debug\net7.0\SuperTurista.DataAccess.csproj.CopyComplete
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\obj\Debug\net7.0\SuperTurista.DataAccess.dll
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\obj\Debug\net7.0\refint\SuperTurista.DataAccess.dll
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\obj\Debug\net7.0\SuperTurista.DataAccess.pdb
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.DataAccess\obj\Debug\net7.0\ref\SuperTurista.DataAccess.dll

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SuperTurista.Api.props" />
+</Project>

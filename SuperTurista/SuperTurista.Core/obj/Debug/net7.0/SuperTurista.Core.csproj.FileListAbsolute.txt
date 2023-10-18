@@ -1,0 +1,12 @@
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.Core\bin\Debug\net7.0\SuperTurista.Core.deps.json
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.Core\bin\Debug\net7.0\SuperTurista.Core.dll
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.Core\bin\Debug\net7.0\SuperTurista.Core.pdb
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.Core\obj\Debug\net7.0\SuperTurista.Core.csproj.AssemblyReference.cache
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.Core\obj\Debug\net7.0\SuperTurista.Core.GeneratedMSBuildEditorConfig.editorconfig
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.Core\obj\Debug\net7.0\SuperTurista.Core.AssemblyInfoInputs.cache
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.Core\obj\Debug\net7.0\SuperTurista.Core.AssemblyInfo.cs
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.Core\obj\Debug\net7.0\SuperTurista.Core.csproj.CoreCompileInputs.cache
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.Core\obj\Debug\net7.0\SuperTurista.Core.dll
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.Core\obj\Debug\net7.0\refint\SuperTurista.Core.dll
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.Core\obj\Debug\net7.0\SuperTurista.Core.pdb
+T:\Lucas\Documentos_Importantes\TRABAJO\SuperTurista\SuperTurista\SuperTurista\SuperTurista.Core\obj\Debug\net7.0\ref\SuperTurista.Core.dll

@@ -24,17 +24,15 @@ namespace SuperTuriste.Service.Services
         }
         public async Task<JwtTokenDto> GenerateToken(Usuario usuario)
         {
-            var sessionTimeoutValue = (await _parametroSistemaRepository.ExecuteSelectableQueryAsync(s => s.Value, f => f.Code == "TimeoutSesion"))?.FirstOrDefault();
-            int.TryParse(sessionTimeoutValue, out var sessionTimeout);
+            int.TryParse((await _parametroSistemaRepository.ExecuteSelectableQueryAsync(s => s.Value, f => f.Code == "TimeoutSesion"))?.FirstOrDefault(), out var sessionTimeout);
             if (sessionTimeout <= 0) sessionTimeout = 15;
-
             return GenerateToken(usuario, sessionTimeout);
         }
         public JwtTokenDto GenerateToken(Usuario usuario, int expireMinutes)
         {
             return _jwtHelper.GenerateToken(usuario, expireMinutes);
         }
-        public UserTokenInfoDto GetTokenInfo()
+        public UserTokenInfoDto? GetTokenInfo()
         {
             return _jwtHelper.GetTokenInfo();
         }

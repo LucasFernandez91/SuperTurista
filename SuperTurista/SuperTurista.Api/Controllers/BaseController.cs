@@ -15,24 +15,23 @@ namespace SuperTurista.Api.Controllers
         {
             _jwtHelper = jwtHelper;
         }
-        public override OkObjectResult Ok(object value)
+        public override OkObjectResult Ok(object? value)
         {
             var token = GetUpdatedToken()?.Result;
 
             return base.Ok(new GenericOkResponseDto()
             {
                 Success = true,
-                Result = value,
-                UpdatedToken = token?.Token
+                Result = value ?? "",
+                UpdatedToken = token?.Token ?? ""
             });
         }
-        [HttpGet]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<JwtTokenDto> GetUpdatedToken()
         {
-            JwtTokenDto token = null;
+            JwtTokenDto token = new JwtTokenDto();
 
-            //No regenerar token cuando viene de ejecutar el login
-            if (!HttpContext.Request.Path.Value.Contains("/login"))
+            if (HttpContext.Request.Path.Value != null && !HttpContext.Request.Path.Value.Contains("/login"))
             {
                 var u = _jwtHelper.GetTokenInfo();
 

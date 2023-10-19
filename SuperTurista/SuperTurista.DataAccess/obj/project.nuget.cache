@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "1N9scJ67zmDMGWVHmTtj2T7rgvm0yA9A2JjqXVg5U+69bibekMKouXyi1vzEVswA49kGWurFwgqKD7OFeEKSUQ==",
+  "dgSpecHash": "gCKaB9G0ncNtKYzK8vSaBqztygqtnMkSinCIO/2CNbKHF7kIhdPOGh/y/yvVd6NMkufeBNsndZFjadNuuepGMA==",
   "success": true,
   "projectFilePath": "T:\\Lucas\\Documentos_Importantes\\TRABAJO\\SuperTurista\\SuperTurista\\SuperTurista\\SuperTurista.DataAccess\\SuperTurista.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lucas\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.12\\microsoft.aspnetcore.cryptography.internal.7.0.12.nupkg.sha512",
+    "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.12\\microsoft.aspnetcore.cryptography.keyderivation.7.0.12.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

@@ -1,71 +1,57 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
-using SuperTurista.Core.DTOs;
+﻿using SuperTurista.Core.DTOs;
+using SuperTurista.Core.Mappers;
 using SuperTurista.Core.Models;
 using SuperTurista.DataAccess.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace SuperTuriste.Service.Services
 {
     public interface IUsuarioService : IBaseService
     {
+        Task<List<Usuario>> List();
         Task<Usuario> GetById(long id);
+        Task<Usuario> GetByLogin(string login);
         Task<SaveUsuarioDTO> Save(SaveUsuarioDTO model);
+        Task<bool> Delete(long id);
     }
     public class UsuarioService : BaseService, IUsuarioService
     {
-        private readonly string _publicWebUrl;
-        private readonly string _mailPublicWebUrl;
-
         private readonly IUsuarioRepository _usuarioRepository;
-        private readonly JwtService _jwtHelper;
-        private readonly IHttpContextAccessor _httpContextAccessor;
-
-        private readonly bool _useAws;
-
         public UsuarioService
         (
             IUsuarioRepository usuarioRepository,
-            IConfiguration configuration,
-            IHttpContextAccessor httpContextAccessor,
             JwtService jwtHelper
         ) : base(jwtHelper)
         {
             _usuarioRepository = usuarioRepository;
-            _httpContextAccessor = httpContextAccessor;
-            _jwtHelper = jwtHelper;
-
-            if (configuration != null)
-            {
-                _publicWebUrl = configuration["PublicWebUrl"];
-
-                if (!bool.TryParse(configuration["UseAws"], out _useAws))
-                    _useAws = false;
-            }
         }
 
         #region Getters
+
+        public async Task<List<Usuario>> List()
+        {
+            return (await _usuarioRepository.ExecuteQueryAsync()).ToList();
+        }
 
         public async Task<Usuario> GetById(long id)
         {
             return (await _usuarioRepository.ExecuteQueryAsync(x => x.Id == id)).FirstOrDefault() ?? new Usuario();
         }
 
+        public async Task<Usuario> GetByLogin(string login)
+        {
+            return (await _usuarioRepository.ExecuteQueryAsync(x => x.Login == login)).FirstOrDefault() ?? new Usuario();
+        }
         #endregion
 
         #region DB Access
 
         public async Task<SaveUsuarioDTO> Save(SaveUsuarioDTO model)
         {
-            if (!(await Validate(model)))
+            if (!Validate(model))
                 throw new Exception("Ocurrió un error al intentar guardar el usuario");
 
-            Usuario u = null;
+            Usuario u;
 
             if (model.Id == 0)
                 u = await Insert(model);
@@ -77,24 +63,31 @@ namespace SuperTuriste.Service.Services
             return model;
         }
 
-        private Task<Usuario?> Update(SaveUsuarioDTO model)
+        private async Task<Usuario> Update(SaveUsuarioDTO model)
         {
-            throw new NotImplementedException();
+            return await _usuarioRepository.Update(new UsuarioMapper().MapToUsuario(model));
         }
-
-        private Task<Usuario?> Insert(SaveUsuarioDTO model)
+        private async Task<Usuario> Insert(SaveUsuarioDTO model)
         {
-            throw new NotImplementedException();
+            return await _usuarioRepository.Add(new UsuarioMapper().MapToUsuario(model));
         }
-
-        public async Task<bool> Delete(long itemId)
+        public async Task<bool> Delete(long id)
         {
-            var u = await GetById(itemId);
+            var u = await GetById(id);
             return await _usuarioRepository.SoftDelete(u);
         }
-        private Task<bool> Validate(SaveUsuarioDTO model)
+        private bool Validate(SaveUsuarioDTO model)
         {
-            return Task.Run(() => true);
+            string patron = @"^[\w\.-]+@[\w\.-]+\.\w+$";
+            if (string.IsNullOrEmpty(model.Email) ||
+                !Regex.IsMatch(model.Email, patron) ||
+                string.IsNullOrEmpty(model.Nombre) ||
+                string.IsNullOrEmpty(model.Apellido) ||
+                string.IsNullOrEmpty(model.Telefono) ||
+                string.IsNullOrEmpty(model.Login) ||
+                string.IsNullOrEmpty(model.Password))
+                return false;
+            return true;
         }
         #endregion
     }

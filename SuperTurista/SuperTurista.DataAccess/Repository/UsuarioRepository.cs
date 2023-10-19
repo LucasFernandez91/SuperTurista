@@ -10,6 +10,8 @@ namespace SuperTurista.DataAccess.Repository
 {
     public interface IUsuarioRepository : IRepositoryBase<Usuario>
     {
+        Task<Usuario> Add(Usuario entity);
+        Task<Usuario> Update(Usuario entity);
         Task<bool> SoftDelete(Usuario entity);
     }
     public class UsuarioRepository : RepositoryBase<Usuario>, IUsuarioRepository
@@ -19,16 +21,18 @@ namespace SuperTurista.DataAccess.Repository
             Core.Helpers.JwtHelper jwtHelper
         ) : base(context, jwtHelper){}
 
-        public async Task Add(Usuario entity)
+        public async Task<Usuario> Add(Usuario entity)
         {
             await SoftAdd(entity);
             await _dbContext.SaveChangesAsync();
+            return entity;
         }
 
-        public async Task Update(Usuario entity)
+        public async Task<Usuario> Update(Usuario entity)
         {
             await SoftUpdate(entity);
             await _dbContext.SaveChangesAsync();
+            return entity;
         }
 
         public async Task SoftAdd(Usuario entity)

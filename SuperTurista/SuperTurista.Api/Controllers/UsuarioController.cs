@@ -9,7 +9,6 @@ namespace SuperTurista.Api.Controllers
     public class UsuarioController : BaseController
     {
         private readonly IUsuarioService _usuarioService;
-
         public UsuarioController
         (
             IUsuarioService usuarioService,
@@ -18,19 +17,25 @@ namespace SuperTurista.Api.Controllers
         {
             _usuarioService = usuarioService;
         }
-
+        [HttpGet("list")]
+        public async Task<ActionResult<UsuarioDTO>> List()
+        {
+            return Ok(await _usuarioService.List());
+        }
         [HttpGet("{id}")]
         public async Task<ActionResult<UsuarioDTO>> GetUsuario([FromRoute] long id)
         {
-            var result = await _usuarioService.GetById(id);
-            return Ok(result);
+            return Ok(await _usuarioService.GetById(id));
         }
-
         [HttpPost("save")]
         public async Task<ActionResult<SaveUsuarioDTO>> PostUsuario([FromBody] SaveUsuarioDTO model)
         {
-            var result = await _usuarioService.Save(model);
-            return Ok(result);
+            return Ok(await _usuarioService.Save(model));
+        }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<SaveUsuarioDTO>> Delete([FromRoute] long id)
+        {
+            return Ok(await _usuarioService.Delete(id));
         }
     }
 }

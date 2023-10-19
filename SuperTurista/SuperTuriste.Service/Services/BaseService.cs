@@ -1,9 +1,4 @@
 ﻿using SuperTurista.Core.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperTuriste.Service.Services
 {
@@ -21,14 +16,9 @@ namespace SuperTuriste.Service.Services
         {
             _jwtHelper = jwtHelper;
         }
-
         public UserTokenInfoDto GetTokenInfo()
         {
-            var tokenUser = _jwtHelper.GetTokenInfo();
-            if (tokenUser == null)
-                throw new Exception("Debe iniciar sesión para continuar");
-
-            return tokenUser;
+            return _jwtHelper.GetTokenInfo() ?? throw new Exception("Must login!");
         }
     }
 }

@@ -84,7 +84,11 @@ namespace SuperTurista.DataAccess.Repository
                     ((IEntityBase)entity).CreationUser = loggedUser?.UserName;
                     ((IEntityBase)entity).ModifiedUser = loggedUser?.UserName;
                 }
-
+                else
+                {
+                    ((IEntityBase)entity).CreationUser = "admin";
+                    ((IEntityBase)entity).ModifiedUser = "admin";
+                }
                 ((IEntityBase)entity).CreationDate = DateTime.Now;
                 ((IEntityBase)entity).LastModified = DateTime.Now;
             }

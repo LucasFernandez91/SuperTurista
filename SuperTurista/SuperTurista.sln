@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperTurista.Core", "SuperT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperTurista.DataAccess", "SuperTurista.DataAccess\SuperTurista.DataAccess.csproj", "{E24D335C-E0C0-4362-B507-A51AE33DA589}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperTuriste.Service", "SuperTuriste.Service\SuperTuriste.Service.csproj", "{900EB724-C629-412C-8FF8-DE8718DDCE82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperTurista.Service", "SuperTuriste.Service\SuperTurista.Service.csproj", "{900EB724-C629-412C-8FF8-DE8718DDCE82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

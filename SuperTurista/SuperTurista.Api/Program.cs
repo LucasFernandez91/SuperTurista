@@ -1,12 +1,16 @@
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.DataProtection.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using SuperTurista.Core.Helpers;
 using SuperTurista.DataAccess;
 using SuperTurista.DataAccess.Repository;
 using SuperTuriste.Service.Services;
+using System.Text;
 
 namespace SuperTurista.Api
 {
@@ -55,6 +59,8 @@ namespace SuperTurista.Api
             ConfigureIoC(builder.Services);
             ConfigureAuthorization(builder.Services, configuration);
 
+            
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -62,6 +68,7 @@ namespace SuperTurista.Api
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                
             }
 
             app.UseHttpsRedirection();
@@ -73,6 +80,33 @@ namespace SuperTurista.Api
         {
             services.AddAuthorization();
             services.AddTokenAuthentication(config);
+            services.AddSwaggerGen(
+                c =>
+                {
+                    c.SwaggerDoc("v1", new OpenApiInfo { Title = "SuperTurista", Version = "v1" });
+                    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                    {
+                        Description = "JWT Authorization header using the Bearer scheme (Example: 'Bearer token')",
+                        Name = "Authorization",
+                        In = ParameterLocation.Header,
+                        Type = SecuritySchemeType.Http,
+                        Scheme = "Bearer"
+                    });
+                    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                    {
+                        {
+                            new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "Bearer"
+                                }
+                            },
+                            Array.Empty<string>()
+                        }
+                    });
+                });
         }
         public static void ConfigureIoC(IServiceCollection services)
         {
@@ -83,9 +117,11 @@ namespace SuperTurista.Api
             services.AddScoped<IBaseService, BaseService>();
 
             services.AddScoped<ISystemParametersRepository, SystemParametersRepository>();
-            services.AddScoped<IUsuarioService, UsuarioService>();
-
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
+            services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<ISeguridadService, SeguridadService>();
+
         }
     }
 }

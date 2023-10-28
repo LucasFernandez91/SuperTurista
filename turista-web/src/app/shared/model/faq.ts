@@ -1,11 +1,31 @@
-export class Faq {
-    id: number;
-    question: string;
-    answer: string;
-    category: string;
+export class Faq {    
+    constructor(
+        public pregunta: string,
+        public respuesta: string,
+        public categoria: string
+    ) {}
 }
 
-export class FaqCategory {
-    id: number;
-    name: string;
+export class FaqCategoria {    
+    constructor(
+        public id: number,
+        public nombre: string,
+    ){}   
+}
+
+export class FaqRequest {
+    constructor(
+        public pregunta: string,
+        public respuesta: string,
+        public categoria: string
+    ) {}
+}
+
+export class FaqResponse {
+    constructor(
+        public id: number,
+        public pregunta: string,
+        public respuesta: string,
+        public categoria: string
+    ) {}
 }

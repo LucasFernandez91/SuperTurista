@@ -20,9 +20,7 @@ namespace SuperTurista.Api
         {
             var builder = WebApplication.CreateBuilder(args);
             var configuration = builder.Configuration;
-            // Add services to the container.
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -58,8 +56,6 @@ namespace SuperTurista.Api
 
             ConfigureIoC(builder.Services);
             ConfigureAuthorization(builder.Services, configuration);
-
-            
 
             var app = builder.Build();
 
@@ -118,10 +114,15 @@ namespace SuperTurista.Api
 
             services.AddScoped<ISystemParametersRepository, SystemParametersRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IVehiculoRepository, VehiculoRepository>();
+            services.AddScoped<IAlojamientoRepository, AlojamientoRepository>();
+            services.AddScoped<IEntityFilesRepository, EntityFilesRepository>();
 
             services.AddScoped<IUsuarioService, UsuarioService>();
             services.AddScoped<ISeguridadService, SeguridadService>();
-
+            services.AddScoped<IVehiculoService, VehiculoService>();
+            services.AddScoped<IAlojamientoService, AlojamientoService>();
+            services.AddScoped<IEntityFilesService, EntityFilesService>();
         }
     }
 }

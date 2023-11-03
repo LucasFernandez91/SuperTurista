@@ -2574,6 +2574,7 @@
       },
       "SuperTurista.DataAccess/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.12",
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.12",
           "Microsoft.EntityFrameworkCore.Analyzers": "7.0.12",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.12",

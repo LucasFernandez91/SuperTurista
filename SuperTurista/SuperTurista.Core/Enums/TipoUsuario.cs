@@ -8,7 +8,7 @@ namespace SuperTurista.Core.Enums
 {
     public enum TipoUsuario
     {
-        Front = 1,
+        Cliente = 1,
         BackOffice = 2
     }
 }

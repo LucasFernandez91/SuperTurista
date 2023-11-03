@@ -21,6 +21,10 @@ namespace SuperTurista.DataAccess
         {
             modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
             modelBuilder.ApplyConfiguration(new SystemParametersConfiguration());
+            modelBuilder.ApplyConfiguration(new RolConfiguration());
+            modelBuilder.ApplyConfiguration(new VehiculoConfiguration());
+            modelBuilder.ApplyConfiguration(new UsuarioRolConfiguration());
+            modelBuilder.ApplyConfiguration(new AlojamientoConfiguration());
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
             {
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;

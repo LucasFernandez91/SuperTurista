@@ -27,7 +27,6 @@ namespace SuperTurista.Core.Helpers
             Array.Copy(hash, 0, hashBytes, SaltSize, HashSize);
             return Convert.ToBase64String(hashBytes);
         }
-
         public static bool VerifyPassword(string password, string hashedPassword)
         {
             byte[] hashBytes = Convert.FromBase64String(hashedPassword);

@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "sFtOWNa//n2CaDXL7OOftxE/LAX4HcHUzlW6drDWYilu3EWnfl45e/35wVVdI1Nig9YdXZEEfQIgtxKm1QQVYQ==",
+=======
+  "dgSpecHash": "6JQwQf34yOvnQjoN75kRZN5caJLUpzDVxF+DEldi1nTu1OBbgrRvGevtpH0gUa9r8jEI1d6BBfHHvUvg0z4LAw==",
+>>>>>>> main
   "success": true,
   "projectFilePath": "C:\\Users\\lucas\\Desktop\\SuperTurista-Github\\SuperTurista\\SuperTurista\\SuperTurista.Api\\SuperTurista.Api.csproj",
   "expectedPackageFiles": [],

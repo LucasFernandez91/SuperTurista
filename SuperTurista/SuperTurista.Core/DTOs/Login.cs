@@ -17,7 +17,6 @@ namespace SuperTurista.Core.DTOs
         public UsuarioDTO Usuario { get; set; }
         public bool DebeCambiarClave { get; set; }
         public JwtTokenDto Token { get; set; }
-        public string CognitoChallenge { get; set; }
     }
 
     public class UserTokenInfoDto

@@ -7,4 +7,7 @@ export * from './publicidad';
 export * from './tipoReserva';
 export * from './tipoServicio';
 export * from './vehiculo';
+export * from './comentario';
+export * from './genericResponse';
+export * from './constants';
 

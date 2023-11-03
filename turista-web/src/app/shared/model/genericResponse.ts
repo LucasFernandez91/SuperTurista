@@ -13,16 +13,5 @@ export class GenericSearchResponse<T> {
     ) {}
 }
 
-export class GenericPieDashboardResponse {
-    constructor (
-        public readonly TotalItemsGrupos: number,
-        public readonly Grupos: GenericPieDashboardItemResponse[]
-    ) {}
-}
 
-export class GenericPieDashboardItemResponse {
-    constructor (
-        public readonly CantidadGrupo: number,
-        public readonly NombreGrupo: string
-    ) {}
-}
+

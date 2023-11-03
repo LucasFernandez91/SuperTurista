@@ -26,5 +26,12 @@ namespace SuperTurista.Api.Controllers
             var result = await seguridadService.Login(model);
             return Ok(result);
         }
+        [HttpPost("Registro")]
+        [AllowAnonymous]
+        public async Task<ActionResult<bool>> Registro([FromBody] RegistroRequest model)
+        {
+            var result = await seguridadService.Register(model);
+            return Ok(result);
+        }
     }
 }

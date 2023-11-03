@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "jog1umtDROH+x5EoOuUJRVRULrhvPAk7AacL7BR3ukPZR9PrRbn41Q6r5WU2sAfcGTQgjIp84V+lHSZPmTYXoA==",
+=======
+  "dgSpecHash": "AJHoZQ0GxHF58+A4HDI1Aq466/7P6gjryulUqY7bqbzjmD6Gjqq4qFZ6pA44Qkwq5xpSvtt0ejPAZ/vT7udThA==",
+>>>>>>> main
   "success": true,
   "projectFilePath": "C:\\Users\\lucas\\Desktop\\SuperTurista-Github\\SuperTurista\\SuperTurista\\SuperTurista.DataAccess\\SuperTurista.DataAccess.csproj",
   "expectedPackageFiles": [],

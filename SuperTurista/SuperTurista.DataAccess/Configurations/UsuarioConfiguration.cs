@@ -17,9 +17,6 @@ namespace SuperTurista.DataAccess.Configurations
             builder.Property(f => f.Login).HasMaxLength(100).IsRequired();
             builder.Property(f => f.Email).HasMaxLength(255).IsRequired();
 
-            builder.Property(f => f.Nombre).HasMaxLength(150);
-            builder.Property(f => f.Apellido).HasMaxLength(150);
-
             builder.Property(f => f.CreationUser).HasMaxLength(100);
             builder.Property(f => f.ModifiedUser).HasMaxLength(100);
 

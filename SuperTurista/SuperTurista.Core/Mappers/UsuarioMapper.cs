@@ -11,12 +11,9 @@ namespace SuperTurista.Core.Mappers
             return new Usuario()
             {
                 Id = DTO.Id,
-                Nombre = DTO.Nombre,
-                Apellido = DTO.Apellido,
                 Login = DTO.Login,
                 Email = DTO.Email,
                 PasswordHash = EncryptHelper.CreatePasswordHash(DTO.Password),
-                Telefono = DTO.Telefono,
                 Activo = true
             };
         }
@@ -24,11 +21,24 @@ namespace SuperTurista.Core.Mappers
         {
             return new UsuarioDTO()
             {
-                Nombre = entity.Nombre,
-                Apellido = entity.Apellido,
                 Login = entity.Login,
                 Email = entity.Email,
-                Telefono = entity.Telefono,
+            };
+        }
+        public Usuario MapRegistroToNewUsuario(RegistroRequest request)
+        {
+            return new Usuario()
+            {
+                Login = request.Login,
+                Email = request.Email,
+                PasswordHash = EncryptHelper.CreatePasswordHash(request.Password),
+                Persona = new Persona
+                {
+                    Nombre = request.Nombre,
+                    Apellido = request.Apellido,
+                    Telefono = request.Telefono,
+                },
+                Activo = false
             };
         }
     }

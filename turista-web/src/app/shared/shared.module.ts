@@ -4,17 +4,26 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
+import { DialogConfirmComponent } from './components/modals/dialog-confirm.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
+
+import { FormsModule } from '@angular/forms';
+
 
 
 
 @NgModule({
   declarations: [
   
+  
+    DialogConfirmComponent
   ],
   imports: [
     CommonModule,
@@ -24,6 +33,12 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatSidenavModule,   
     MatListModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatGridListModule,
+    MatInputModule,
+    FormsModule,
+    MatSelectModule,
     RouterModule
     
   ],
@@ -34,6 +49,13 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatSidenavModule,   
     MatListModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatGridListModule,
+    MatInputModule,
+    FormsModule,
+    MatSelectModule,
+    RouterModule
   ]
 
 })

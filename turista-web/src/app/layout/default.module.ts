@@ -14,6 +14,12 @@ import { HomeComponent } from '../pages/home/home.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { HeaderComponent } from '../shared/components/header/header.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
+import { DialogSetearClaveComponent } from '../auth/components/dialog-setear-clave.component';
+import { DialogRegistroUsuarioComponent } from '../auth/components/dialog-registro-usuario.component';
+import { DialogSetearClaveOlvidadaComponent } from '../auth/components/dialog-setear-clave-olvidada.component';
+import { DialogOlvidoUsuarioComponent } from '../auth/components/dialog-olvido-usuario.component';
+import { DialogOlvidoClaveComponent } from '../auth/components/dialog-olvido-clave.component';
+import { ConfirmUserComponent } from '../auth/confirm-user.component';
 
 
 @NgModule({
@@ -27,7 +33,13 @@ import { FooterComponent } from '../shared/components/footer/footer.component';
     DefaultComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,   
+    DialogSetearClaveComponent,   
+    DialogRegistroUsuarioComponent,
+    DialogSetearClaveOlvidadaComponent,
+    DialogOlvidoUsuarioComponent,
+    DialogOlvidoClaveComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -47,7 +59,13 @@ import { FooterComponent } from '../shared/components/footer/footer.component';
     DefaultComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,  
+    DialogSetearClaveComponent,   
+    DialogRegistroUsuarioComponent,
+    DialogSetearClaveOlvidadaComponent,
+    DialogOlvidoUsuarioComponent,
+    DialogOlvidoClaveComponent,  
+
   ]
 })
 export class DefaultModule { }

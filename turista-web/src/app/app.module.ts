@@ -11,10 +11,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
+import { AuthGuard } from './auth/auth-guard.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './shared/services/jwt.interceptor';
+import { DatePipe } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
-    AppComponent,      
+    AppComponent,
+        
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,14 @@ import { SharedModule } from './shared/shared.module';
     MatListModule,   
     
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    DatePipe,
+    DefaultModule,
+    
+   
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

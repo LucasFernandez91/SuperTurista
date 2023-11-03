@@ -1,0 +1,67 @@
+<div class="login-page">
+    <div class="login-container">
+  
+      <div class="logo-image ">
+        <img src="../../../assets/img/LOGO_SUPER_TURISTA_R.png">
+      </div>
+  
+      <div class="login-box">
+  
+        <div class="login-box-header">
+          <mat-label>Iniciar sesión</mat-label>
+        </div>
+  
+        <div class="login-box-body">
+  
+          <form [formGroup]="formGroup">
+            <mat-form-field class="example-full-width">
+              <mat-label>Usuario</mat-label>
+              <input matInput  type="text" formControlName="UserName" (keyup.enter)="login()">
+              <mat-icon matSuffix>lock</mat-icon>
+              <mat-error *ngIf="!formGroup.controls['UserName'].valid">
+                {{ getErrorUsername() }}
+              </mat-error>
+            </mat-form-field>
+            
+            <mat-form-field class="example-full-width">
+              <mat-label>Clave</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="Clave" (keyup.enter)="login()">
+              <button mat-icon-button matSuffix (click)="hide = !hide" type="button"><mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon></button>
+              <mat-error *ngIf="!formGroup.controls['Clave'].valid">
+                {{ getErrorClave() }}
+              </mat-error>
+            </mat-form-field>
+          </form>
+          
+          <div class="recuperacion">
+            <a  [routerLink]="" (click)="openForgotUserModal()">
+              <mat-label>¿Olvidaste tu usuario?</mat-label>
+            </a>
+            <a  [routerLink]="" (click)="openForgotPasswordModal()">
+              <mat-label>¿Olvidaste tu clave?</mat-label>
+            </a>
+          </div>
+        
+          <div class="contenedor-button">
+            <button mat-raised-button class="button-black-gradient" (click)="login()" [disabled]="!buttonEnabled">
+              {{buttonEnabled ? 'Ingresar' : 'Ingresando...'}}
+            </button>          
+            <button mat-raised-button class="button-white-bunch" (click)="openRegisterModal()" >
+             Registrarse 
+            </button>          
+          </div>
+  
+        </div>
+  
+        <div class="login-box-footer">
+          <div fxLayout="row stretch" fxLayout.xs="column" fxLayoutAlign="center center" style="text-align: center;">
+            <a [routerLink]="" (click)="openFaqModal()"><mat-label>¿Tenes dudas? ¡Revisa nuestras FAQs acá!</mat-label></a>
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  </div>
+  
+  

@@ -8,11 +8,13 @@ import { FaqsComponent } from './pages/faqs/faqs.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { OfertasComponent } from './pages/ofertas/ofertas.component';
 import { VehiculosComponent } from './pages/vehiculos/vehiculos.component';
+import { AuthGuard } from './auth/auth-guard.service';
 
 const routes: Routes = [
   {
     path: '',
     component: DefaultComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -48,11 +50,13 @@ const routes: Routes = [
         component: VehiculosComponent
       }
     ]
-  }
-];
+  }, {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+  }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

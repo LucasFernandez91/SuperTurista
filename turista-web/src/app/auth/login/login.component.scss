@@ -21,7 +21,6 @@ body {
 .login-page {
     min-height: 100%;
     overflow: auto;
-    /*hidden*/
     display: flex;
     justify-content: center;
     background-color: #f5f9fc;
@@ -45,7 +44,6 @@ body {
 
 .login-box {
     width: 100%;
-    /* height: 400px; */
     -webkit-box-shadow: 2px 4px 58px -20px rgba(0, 0, 0, 1);
     -moz-box-shadow: 2px 4px 58px -20px rgba(0, 0, 0, 1);
     box-shadow: 2px 4px 58px -20px rgba(0, 0, 0, 1);
@@ -53,7 +51,7 @@ body {
 
 .login-box-header {
     height: 40px;
-    background-color: #ffd000;
+    background-color: rgb(255, 94, 0);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,7 +98,7 @@ body {
     padding: 1.5% !important;
     background-color: #ffd000;
     font-size: 1.5em;
-    color: #fff !important;
+    color: #000000 !important;
 }
 
 .example-form {
@@ -112,21 +110,3 @@ body {
 .example-full-width {
     width: 100%;
 }
-
-/* .login-box-header {
-    width: auto;
-    height: 20%;
-    background-color: #673ab7;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 3em;
-    padding: 2%;
-    color: #fff;
-  }
-  
-  .login-box-body {
-    width: auto;
-    height:100%;
-    padding: 5% 5% 5% 5%;
-    color: #d2d2d2;
-  } */

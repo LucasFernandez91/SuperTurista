@@ -2,7 +2,6 @@ import { GenericResponse, GenericSearchResponse } from './../model/genericRespon
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CrudOperations } from './crud-operations.interface';
-import { retry, catchError } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { LocalStorageKeys } from '../model/constants';
 import { SharedFunctions } from 'src/app/shared/shared.functions';
@@ -56,8 +55,6 @@ export abstract class CrudService<T, ID, saveModel, searchModel> implements Crud
     return this.resource;
   }
 
- 
-
   getServiceUrl() { 
     return this._serviceUrl;
   }
@@ -76,11 +73,6 @@ export abstract class CrudService<T, ID, saveModel, searchModel> implements Crud
 
   get(id: ID): Observable<GenericResponse<T>> {
     return this._http.get<GenericResponse<T>>(this._serviceUrl + "/" + id, this.httpOptions);
-    // .pipe
-    // (
-    //   retry(1),
-    //   catchError(this.handleError)
-    // )
   }
 
   search(value: searchModel): Observable<GenericSearchResponse<any>> {    
@@ -94,6 +86,4 @@ export abstract class CrudService<T, ID, saveModel, searchModel> implements Crud
   delete(id: ID): Observable<GenericResponse<T>> {
     return this._http.delete<GenericResponse<T>>(this._serviceUrl + "/" + id, this.httpOptions);
   }
-
-  
 }

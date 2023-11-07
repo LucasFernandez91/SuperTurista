@@ -3,13 +3,15 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
-
+import { of } from "rxjs"
 import { SharedFunctions } from 'src/app/shared/shared.functions';
 import { LocalStorageKeys } from 'src/app/shared/model';
+import { SeguridadService } from 'src/app/shared/services/seguridad.service';
+import { LoginRequest } from 'src/app/shared/model/securityRequests';
 @Component({
   selector: 'workme-login',
   templateUrl: './login.component.html',
-  styleUrls: ['login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 
 export class LoginComponent implements OnInit{
@@ -25,11 +27,12 @@ export class LoginComponent implements OnInit{
     public dialog: MatDialog,
     private sharedFunctions: SharedFunctions,
     private router: Router,
+    private securityService: SeguridadService,
     ) {
+      this.buildForm();
   }
 
   ngOnInit(): void {
-    this.buildForm();
   }
 
   buildForm() {
@@ -47,32 +50,28 @@ export class LoginComponent implements OnInit{
     return this.formGroup.get('Clave').hasError('required') ? 'El campo es obligatorio' : '';
   }
 
-  login() {
+  async login() {
     if(this.formGroup.valid) {
       this.buttonEnabled = false;
-      /* this.seguridadService.login(this.formGroup.value).subscribe(user => {
-        this.buttonEnabled = true;
-        if (user != null && user.Success && user.Result != null) {
-          if (user.Result.DebeCambiarClave) {
-            const dialogRef = this.dialog.open(DialogSetearClaveComponent, {
-              data: { UsuarioId: user.Result.Usuario?.Id, Login: user.Result.Usuario?.Login },
-              width: '500px'
-            });
-        
-            dialogRef.afterClosed().subscribe((result: boolean) => {
-              this.buildForm();
-            });
-          }
-          else
-            this.loginSuccessfull(user);
+      var user = await this.securityService.login(new LoginRequest(this.formGroup.value.UserName, this.formGroup.value.Clave));
+      this.buttonEnabled = true;
+      if (user != null && user.Success && user.Result != null) {
+        /* if (user.Result.DebeCambiarClave) {
+          const dialogRef = this.dialog.open(DialogSetearClaveComponent, {
+            data: { UsuarioId: user.Result.Usuario?.Id, Login: user.Result.Usuario?.Login },
+            width: '500px'
+          });
+      
+          dialogRef.afterClosed().subscribe((result: boolean) => {
+            this.buildForm();
+          });
         }
-        else {
-          this.sharedFunctions.showMessage(user?.Message, "Error");
-        }
-      }, (err: HttpErrorResponse) => {
-        this.buttonEnabled = true;
-        this.sharedFunctions.handleError(err, true);
-      }); */
+        else */
+        this.loginSuccessfull(user);
+      }
+      else {
+        this.sharedFunctions.showMessage(user?.Message, "Error");
+      }
     }
     else {
       this.buttonEnabled = true;
@@ -83,10 +82,6 @@ export class LoginComponent implements OnInit{
   loginSuccessfull(user) {
     this.sharedFunctions.setLocalStorageValue(LocalStorageKeys.Token, user.Result.Token.Token);
     this.sharedFunctions.setLocalStorageValue(LocalStorageKeys.Usuario, JSON.stringify(user.Result.Usuario));
-    
-    // No se guardan mas los menues aca porque no vienen mas en el Login, se cargan a demanda por Tenant
-    // this.sharedFunctions.setLocalStorageValue(LocalStorageKeys.Menu, JSON.stringify(user.Result.Menues));
-
     this.router.navigate(['/']);
   }
 

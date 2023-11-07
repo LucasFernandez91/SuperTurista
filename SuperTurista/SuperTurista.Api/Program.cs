@@ -27,6 +27,7 @@ namespace SuperTurista.Api
             var CorsOrigin = new string[]
             {
                 "http://localhost:4200",
+                "https://localhost:4200",
                 "http://localhost:4201",
                 "http://localhost:4202",
             };
@@ -70,6 +71,7 @@ namespace SuperTurista.Api
             app.UseHttpsRedirection();
             app.UseAuthorization();
             app.MapControllers();
+            app.UseCors();
             app.Run();
         }
         public static void ConfigureAuthorization(IServiceCollection services, ConfigurationManager config)

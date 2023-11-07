@@ -31,16 +31,6 @@ export class SharedFunctions {
                 "Entendido",
             )
         });
-        // DialogUtility.confirm({
-        //     title: titulo,
-        //     content: mensaje,
-        //     okButton: { text: 'Aceptar' },
-        //     cancelButton: { text: '' },
-        //     showCloseIcon: true,
-        //     position: { X: 'center', Y: 'center' },
-        //     closeOnEscape: true,
-        //     animationSettings: { effect: 'Zoom' }
-        // });
     }
     
     public handleError(err: HttpErrorResponse, showErrorMessage: boolean = false) {

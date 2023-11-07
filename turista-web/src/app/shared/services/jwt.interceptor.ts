@@ -21,10 +21,9 @@ export class JwtInterceptor implements HttpInterceptor {
         try
         {
             if (this.sharedFunctions == null)
-                this.sharedFunctions = new SharedFunctions(this.router, this.datePipe,null);
+                this.sharedFunctions = new SharedFunctions(this.router, this.datePipe, null);
 
             let t = this.sharedFunctions.getLocalStorageValue(LocalStorageKeys.Token);
-
             if (t != null && t.length > 0) {
                 request = request.clone({
                     setHeaders: {
@@ -44,14 +43,10 @@ export class JwtInterceptor implements HttpInterceptor {
     }
 
     handleSuccess(event) {
-        
-
-        if (this.sharedFunctions == null)
+        /* if (this.sharedFunctions == null)
             this.sharedFunctions = new SharedFunctions(this.router, this.datePipe, null);
-
+ */
         if (event instanceof HttpResponse) {
-          
-            
             if (event != null)
             {
                 if (event.status === 200 || event.status === 204)
@@ -60,7 +55,6 @@ export class JwtInterceptor implements HttpInterceptor {
                     if (tt != null && tt?.length > 0)
                     {
                         this.sharedFunctions.setLocalStorageValue(LocalStorageKeys.Token, tt);
-                        
                     }
                 }
             }
@@ -69,10 +63,8 @@ export class JwtInterceptor implements HttpInterceptor {
     }
 
     handleError(err: HttpErrorResponse) {
-
-
-        if (this.sharedFunctions == null)
-            this.sharedFunctions = new SharedFunctions(this.router, this.datePipe, null);
+        /* if (this.sharedFunctions == undefined)
+            this.sharedFunctions = new SharedFunctions(this.router, this.datePipe, null); */
 
         if (err != null)
         {
@@ -82,19 +74,16 @@ export class JwtInterceptor implements HttpInterceptor {
                 case 0:
                     // return throwError("Ocurrió un error solicitando los datos al servidor");
                     break;
-
                 //Usuario no logueado / Sesion expirada / Token vencido
                 case 401:
                     this.sharedFunctions.clearLocalStorage();
                     // return throwError("Su sesión expiró. Por favor iniciela nuevamente");
                     break;
-            
                 default:
                     break;
             }
         }
-
         //Server sin respuesta conocida
-        return throwError(err);
+        return throwError(() => err);
     }
 }

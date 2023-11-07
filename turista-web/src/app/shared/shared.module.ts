@@ -15,6 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormsModule,
     MatSelectModule,
     RouterModule,
-    MatDialogModule    
+    MatDialogModule,
+    HttpClientModule
   ],
 })
 export class SharedModule { }

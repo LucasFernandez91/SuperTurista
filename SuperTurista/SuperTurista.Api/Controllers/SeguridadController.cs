@@ -23,8 +23,15 @@ namespace SuperTurista.Api.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<SaveUsuarioDTO>> Login([FromBody] LoginRequest model)
         {
-            var result = await seguridadService.Login(model);
-            return Ok(result);
+            try
+            {
+                var result = await seguridadService.Login(model);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
         [HttpPost("Registro")]
         [AllowAnonymous]

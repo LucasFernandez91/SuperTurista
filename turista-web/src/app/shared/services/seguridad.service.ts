@@ -4,7 +4,6 @@ import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CrudService } from './crud.service';
 import { SharedFunctions } from 'src/app/shared/shared.functions';
-import { DialogPinRequestDto} from '../model';
 
 @Injectable({
   providedIn: 'root'
@@ -41,10 +40,6 @@ export class SeguridadService extends CrudService<any, number, any, any> {
 
   checkUsuarioPermiso(funcion:string): Observable<boolean> {
     return this._http.get<boolean>(this._serviceUrl + '/check-usuario-permiso/' + funcion, this.httpOptions);
-  }
-
-  validatePin(p : DialogPinRequestDto): Observable<GenericResponse<boolean>>{
-    return this._http.post<any>(this._serviceUrl + '/validate-pin', p, this.httpOptions);
   }
 
   confirmUser(p : string): Observable<GenericResponse<boolean>>{

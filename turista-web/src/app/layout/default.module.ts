@@ -19,7 +19,7 @@ import { DialogRegistroUsuarioComponent } from '../auth/components/dialog-regist
 import { DialogSetearClaveOlvidadaComponent } from '../auth/components/dialog-setear-clave-olvidada.component';
 import { DialogOlvidoUsuarioComponent } from '../auth/components/dialog-olvido-usuario.component';
 import { DialogOlvidoClaveComponent } from '../auth/components/dialog-olvido-clave.component';
-import { ConfirmUserComponent } from '../auth/confirm-user.component';
+import { AuthComponent } from '../auth/auth.component';
 
 
 @NgModule({
@@ -47,25 +47,6 @@ import { ConfirmUserComponent } from '../auth/confirm-user.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule, 
-    
   ],
-  exports: [
-    OfertasComponent,
-    AlojamientosComponent,
-    VehiculosComponent,
-    NosotrosComponent,
-    FaqsComponent,
-    ContactoComponent,
-    DefaultComponent,
-    HomeComponent,
-    HeaderComponent,
-    FooterComponent,  
-    DialogSetearClaveComponent,   
-    DialogRegistroUsuarioComponent,
-    DialogSetearClaveOlvidadaComponent,
-    DialogOlvidoUsuarioComponent,
-    DialogOlvidoClaveComponent,  
-
-  ]
 })
 export class DefaultModule { }

@@ -1,33 +1,31 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LocalStorageKeys } from 'src/app/shared/model/constants';
-import { SeguridadService } from 'src/app/shared/services/seguridad.service';
+import { MatDialog } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
+
 import { SharedFunctions } from 'src/app/shared/shared.functions';
-import { DialogSetearClaveComponent } from '../components/dialog-setear-clave.component';
-import { DialogRegistroUsuarioComponent } from '../components/dialog-registro-usuario.component';
-import { DialogOlvidoClaveComponent } from '../components/dialog-olvido-clave.component';
-import { DialogOlvidoUsuarioComponent } from '../components/dialog-olvido-usuario.component';
-
-
+import { LocalStorageKeys } from 'src/app/shared/model';
 @Component({
-  selector: 'app-login',
+  selector: 'workme-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['login.component.css']
 })
-export class LoginComponent {
+
+export class LoginComponent implements OnInit{
   formGroup: FormGroup;
   hide: boolean = true;
   buttonEnabled: boolean = true;
+  allowUserRegistration: boolean = false;
+  showLogo: boolean = false;
+  logoUrl: string = "assets/Logo.PNG";
 
   constructor(
     private formBuilder: FormBuilder, 
     public dialog: MatDialog,
     private sharedFunctions: SharedFunctions,
     private router: Router,
-    private seguridadService: SeguridadService) {
+    ) {
   }
 
   ngOnInit(): void {
@@ -52,10 +50,10 @@ export class LoginComponent {
   login() {
     if(this.formGroup.valid) {
       this.buttonEnabled = false;
-      this.seguridadService.login(this.formGroup.value).subscribe(user => {
+      /* this.seguridadService.login(this.formGroup.value).subscribe(user => {
         this.buttonEnabled = true;
         if (user != null && user.Success && user.Result != null) {
-          if (user.Result.CognitoChallenge == "NEW_PASSWORD_REQUIRED") {
+          if (user.Result.DebeCambiarClave) {
             const dialogRef = this.dialog.open(DialogSetearClaveComponent, {
               data: { UsuarioId: user.Result.Usuario?.Id, Login: user.Result.Usuario?.Login },
               width: '500px'
@@ -74,7 +72,7 @@ export class LoginComponent {
       }, (err: HttpErrorResponse) => {
         this.buttonEnabled = true;
         this.sharedFunctions.handleError(err, true);
-      });
+      }); */
     }
     else {
       this.buttonEnabled = true;
@@ -84,14 +82,16 @@ export class LoginComponent {
 
   loginSuccessfull(user) {
     this.sharedFunctions.setLocalStorageValue(LocalStorageKeys.Token, user.Result.Token.Token);
-    this.sharedFunctions.setLocalStorageValue(LocalStorageKeys.Menu, JSON.stringify(user.Result.Menues));
     this.sharedFunctions.setLocalStorageValue(LocalStorageKeys.Usuario, JSON.stringify(user.Result.Usuario));
+    
+    // No se guardan mas los menues aca porque no vienen mas en el Login, se cargan a demanda por Tenant
+    // this.sharedFunctions.setLocalStorageValue(LocalStorageKeys.Menu, JSON.stringify(user.Result.Menues));
 
     this.router.navigate(['/']);
   }
 
-  openRegisterModal() {
-    if (!this.buttonEnabled)
+  /* openRegisterModal() {
+    if (!this.buttonEnabled || !this.allowUserRegistration)
       return;
 
     const dialogRef = this.dialog.open(DialogRegistroUsuarioComponent, {
@@ -100,9 +100,9 @@ export class LoginComponent {
 
     dialogRef.afterClosed().subscribe((result: boolean) => {
     });
-  }
+  } */
 
-  openForgotPasswordModal() {
+  /* openForgotPasswordModal() {
     if (!this.buttonEnabled)
       return;
 
@@ -112,9 +112,9 @@ export class LoginComponent {
 
     dialogRef.afterClosed().subscribe((result: boolean) => {
     });
-  };
+  }; */
 
-  openForgotUserModal() {
+  /* openForgotUserModal() {
     if (!this.buttonEnabled)
       return;
 
@@ -124,7 +124,7 @@ export class LoginComponent {
 
     dialogRef.afterClosed().subscribe((result: boolean) => {
     });
-  };
+  }; */
 
   openFaqModal() {
     this.router.navigate(['faqs-public']);

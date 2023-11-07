@@ -13,16 +13,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
-
 import { FormsModule } from '@angular/forms';
-
-
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
-  
-  
     DialogConfirmComponent
   ],
   imports: [
@@ -39,24 +34,8 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     FormsModule,
     MatSelectModule,
-    RouterModule
-    
+    RouterModule,
+    MatDialogModule    
   ],
-  exports: [   
-    MatButtonModule,
-    MatDividerModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatSidenavModule,   
-    MatListModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatGridListModule,
-    MatInputModule,
-    FormsModule,
-    MatSelectModule,
-    RouterModule
-  ]
-
 })
 export class SharedModule { }

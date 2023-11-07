@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { ConfirmUserComponent } from './confirm-user.component';
 import { AuthComponent } from './auth.component';
 
 export const routes: Routes = [
@@ -13,10 +12,6 @@ export const routes: Routes = [
         path: 'login',
         component: LoginComponent,
       },
-      {
-        path: 'confirm-user',
-        component: ConfirmUserComponent,
-      }
     ]
   },
 ];
@@ -30,7 +25,6 @@ export class AuthRoutingModule {
 }
 
 export const routedComponents = [
-  LoginComponent,  
-  ConfirmUserComponent,
+  LoginComponent,
   AuthComponent
 ];

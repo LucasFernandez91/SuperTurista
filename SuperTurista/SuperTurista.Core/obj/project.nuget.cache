@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gfSZSlFWcBOleB4M6vXmmgGdjLBwKNW57P87SPv9R7Nj31XvZZaBFZFe082Dvl9gXe4wj25b+TOWFJXwpaeZVQ==",
+  "dgSpecHash": "azda17Wtj0CwjhnOCz5Gn4XNXPlw2h/XFZlfYnPNwqCAjvzJWJ5l1oSTvE17SJQmwAPfd4om+W9OPWIyXxuHlg==",
   "success": true,
   "projectFilePath": "T:\\Lucas\\Documentos_Importantes\\TRABAJO\\SuperTurista\\SuperTurista\\SuperTurista\\SuperTurista.Core\\SuperTurista.Core.csproj",
   "expectedPackageFiles": [
@@ -17,12 +17,5 @@
     "C:\\Users\\Lucas\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.0.3\\system.identitymodel.tokens.jwt.7.0.3.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché T:\\Lucas\\Documentos_Importantes\\TRABAJO\\SuperTurista\\SuperTurista\\SuperTurista\\SuperTurista.Core\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

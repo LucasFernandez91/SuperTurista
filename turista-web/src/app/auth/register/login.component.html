@@ -1,0 +1,62 @@
+<div class="login-page">
+  <div class="login-container">
+
+    <!-- <div class="login-image">
+      <img src="{{logoUrl}}" *ngIf="showLogo">
+    </div> -->
+
+    <div class="login-box">
+
+      <div class="login-box-header">
+        <mat-label>INICIO DE SESIÓN</mat-label>
+      </div>
+
+      <div class="login-box-body">
+
+        <form [formGroup]="formGroup">
+          <mat-form-field class="example-full-width">
+            <mat-label>Usuario</mat-label>
+            <input matInput  type="text" formControlName="UserName" (keyup.enter)="login()">
+            <mat-icon matSuffix>lock</mat-icon>
+            <mat-error *ngIf="!formGroup.controls['UserName'].valid">
+              {{ getErrorUsername() }}
+            </mat-error>
+          </mat-form-field>
+          <!-- <a style="font-size: 12px; float: right; margin-top: -10px;" [routerLink]="" (click)="openForgotUserModal()">
+            <mat-label>¿Olvidaste tu usuario?</mat-label>
+          </a> -->
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Clave</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="Clave" (keyup.enter)="login()">
+            <button mat-icon-button matSuffix (click)="hide = !hide" type="button"><mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon></button>
+            <mat-error *ngIf="!formGroup.controls['Clave'].valid">
+              {{ getErrorClave() }}
+            </mat-error>
+          </mat-form-field>
+          <!-- <a style="font-size: 12px; float: right; margin-top: -10px;" [routerLink]="" (click)="openForgotPasswordModal()">
+            <mat-label>¿Olvidaste tu clave?</mat-label>
+          </a> -->
+        </form>
+
+        <br>
+
+        <button mat-raised-button class="login-button" (click)="login()" [disabled]="!buttonEnabled">
+          <mat-icon>input</mat-icon> {{buttonEnabled ? 'Ingresar' : 'Ingresando...'}}
+        </button>
+
+      </div>
+
+      <!-- <div class="login-box-footer">
+        <div fxLayout="row stretch" fxLayout.xs="column" fxLayoutAlign="center center" style="text-align: center; margin-bottom: 10px;">
+          <a *ngIf="allowUserRegistration" [routerLink]="" (click)="openRegisterModal()"><mat-label>¿No tenes usuario? ¡Registrate acá!</mat-label></a>
+        </div>
+        <div fxLayout="row stretch" fxLayout.xs="column" fxLayoutAlign="center center" style="text-align: center;">
+          <a [routerLink]="" (click)="openFaqModal()"><mat-label>¿Tenes dudas? ¡Revisa nuestras FAQs acá!</mat-label></a>
+        </div>
+      </div> -->
+
+    </div>
+
+  </div>
+</div>

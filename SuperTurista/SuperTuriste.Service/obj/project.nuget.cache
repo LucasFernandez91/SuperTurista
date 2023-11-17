@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HsuhGlHD+X/3DZE8QqOd700MJU9jK/k86SapzhQ3Tb0sW++HYULVfedAfcIdU275f+NXCMUSWo7O+Le03XEFPQ==",
+  "dgSpecHash": "lekGkITC5glPEidRzZ012VJetdKgebVf6zLdPIV7Lbz5RaKmN76kmnSU5av8LI97YtVeLqXW/YHc3rJgA5GU2Q==",
   "success": true,
   "projectFilePath": "T:\\Lucas\\Documentos_Importantes\\TRABAJO\\SuperTurista\\SuperTurista\\SuperTurista\\SuperTuriste.Service\\SuperTurista.Service.csproj",
   "expectedPackageFiles": [
@@ -58,12 +58,5 @@
     "C:\\Users\\Lucas\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché T:\\Lucas\\Documentos_Importantes\\TRABAJO\\SuperTurista\\SuperTurista\\SuperTurista\\SuperTuriste.Service\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

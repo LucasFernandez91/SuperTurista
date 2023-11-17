@@ -20,11 +20,9 @@ export class AuthGuard implements CanActivate {
         return true;
       }
     }
-    
-    if (this.sharedFunctions.getLocalStorageValue(LocalStorageKeys.Token) == null) {
+    /* if (this.sharedFunctions.getLocalStorageValue(LocalStorageKeys.Token)) {
       return this.router.parseUrl("/auth/login");
-    }
-
+    } */
     return true;
   }
 }

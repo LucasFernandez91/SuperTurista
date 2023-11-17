@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6JQwQf34yOvnQjoN75kRZN5caJLUpzDVxF+DEldi1nTu1OBbgrRvGevtpH0gUa9r8jEI1d6BBfHHvUvg0z4LAw==",
+  "dgSpecHash": "7EJ9G4k7siX7YRGqXABLDZM+6xRUD1yZuXH5N4oKcyjbJGQrERZI4ub4Gy5KZjEthYYQZUn0e1dsk04t8Yoz9Q==",
   "success": true,
   "projectFilePath": "T:\\Lucas\\Documentos_Importantes\\TRABAJO\\SuperTurista\\SuperTurista\\SuperTurista\\SuperTurista.Api\\SuperTurista.Api.csproj",
   "expectedPackageFiles": [
@@ -236,12 +236,5 @@
     "C:\\Users\\Lucas\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché T:\\Lucas\\Documentos_Importantes\\TRABAJO\\SuperTurista\\SuperTurista\\SuperTurista\\SuperTurista.Api\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

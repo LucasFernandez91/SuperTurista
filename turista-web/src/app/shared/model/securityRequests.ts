@@ -4,3 +4,10 @@ export class LoginRequest {
         public Clave: string,
     ) { }
 }
+
+export class RegisterRequest {
+    constructor(
+        public Nombre: string,
+        public Apellido: string,
+    ) { }
+}

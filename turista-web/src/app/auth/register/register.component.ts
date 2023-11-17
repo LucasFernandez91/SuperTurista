@@ -7,14 +7,15 @@ import { of } from "rxjs"
 import { SharedFunctions } from 'src/app/shared/shared.functions';
 import { LocalStorageKeys } from 'src/app/shared/model';
 import { SeguridadService } from 'src/app/shared/services/seguridad.service';
-import { LoginRequest } from 'src/app/shared/model/securityRequests';
+import { RegisterRequest } from 'src/app/shared/model/securityRequests';
+
 @Component({
-  selector: 'workme-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'workme-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
 
-export class LoginComponent implements OnInit{
+export class RegisterComponent implements OnInit{
   formGroup: FormGroup;
   hide: boolean = true;
   buttonEnabled: boolean = true;
@@ -50,15 +51,15 @@ export class LoginComponent implements OnInit{
     return this.formGroup.get('Clave').hasError('required') ? 'El campo es obligatorio' : '';
   }
 
-  async login() {
+  async register() {
     if(this.formGroup.valid) {
       this.buttonEnabled = false;
-      var user = await this.securityService.login(new LoginRequest(this.formGroup.value.UserName, this.formGroup.value.Clave));
+      var user = await this.securityService.register(new RegisterRequest(this.formGroup.value.UserName, this.formGroup.value.Clave));
       this.buttonEnabled = true;
       if (user != null && user.Success && user.Result != null) {
         /* if (user.Result.DebeCambiarClave) {
           const dialogRef = this.dialog.open(DialogSetearClaveComponent, {
-            data: { UsuarioId: user.Result.Usuario?.Id, Login: user.Result.Usuario?.Login },
+            data: { UsuarioId: user.Result.Usuario?.Id, Register: user.Result.Usuario?.Register },
             width: '500px'
           });
       

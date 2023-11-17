@@ -30,8 +30,19 @@ export class SeguridadService extends CrudService<any, number, any, any> {
     }
   }
 
-  register(p: any): Observable<any> {
-    return this._http.post<any>(this._serviceUrl + '/register', p, this.httpOptions);
+  async register(p: LoginRequest) {
+    try {
+      const datos = await firstValueFrom(
+        this._http.post<any>(this._serviceUrl + '/register', p, this.httpOptions).pipe(
+          catchError((error: HttpErrorResponse) => {
+            return throwError(() => error);
+          })
+        )
+      );
+      return datos;
+    } catch (error) {
+      console.error('Error en la petición GET:', error);
+    }
   }
 
   forgotUser(p: any): Observable<any> {

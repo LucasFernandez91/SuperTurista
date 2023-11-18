@@ -20,6 +20,8 @@ import { DialogSetearClaveOlvidadaComponent } from '../auth/components/dialog-se
 import { DialogOlvidoUsuarioComponent } from '../auth/components/dialog-olvido-usuario.component';
 import { DialogOlvidoClaveComponent } from '../auth/components/dialog-olvido-clave.component';
 import { AuthComponent } from '../auth/auth.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -46,7 +48,8 @@ import { AuthComponent } from '../auth/auth.component';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule, 
+    RouterModule 
+    
   ],
 })
 export class DefaultModule { }

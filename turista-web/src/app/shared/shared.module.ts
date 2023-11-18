@@ -21,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     DialogConfirmComponent
   ],
-  imports: [
+  exports: [
     CommonModule,
     MatButtonModule,
     MatDividerModule,

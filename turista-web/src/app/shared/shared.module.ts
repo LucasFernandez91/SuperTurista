@@ -38,6 +38,6 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     MatDialogModule,
     HttpClientModule
-  ],
+  ]
 })
 export class SharedModule { }

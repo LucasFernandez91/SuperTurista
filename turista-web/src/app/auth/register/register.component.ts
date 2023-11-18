@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit{
   allowUserRegistration: boolean = false;
   showLogo: boolean = false;
   logoUrl: string = "assets/Logo.PNG";
+  registerRequest: RegisterRequest;
 
   constructor(
     private formBuilder: FormBuilder, 
@@ -34,12 +35,18 @@ export class RegisterComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.registerRequest = new RegisterRequest(null, null, null, null, null, null, null);
   }
 
   buildForm() {
     this.formGroup = this.formBuilder.group({
-      'Clave': [null, Validators.required],
-      'UserName': [null, Validators.required]
+      'Nombre': [null, Validators.required],
+      'Apellido': [null, Validators.required],
+      'Telefono': [null, Validators.required],
+      'Login': [null, Validators.required],
+      'Email': [null, Validators.required],
+      'Password': [null, Validators.required],
+      'ConfirmPassword': [null, Validators.required],
     });
   }
 
@@ -53,8 +60,10 @@ export class RegisterComponent implements OnInit{
 
   async register() {
     if(this.formGroup.valid) {
+      Object.assign(this.registerRequest, this.formGroup.value)
+      console.log(this.registerRequest);
       this.buttonEnabled = false;
-      var user = await this.securityService.register(new RegisterRequest(this.formGroup.value.UserName, this.formGroup.value.Clave));
+      var user = await this.securityService.register(this.registerRequest);
       this.buttonEnabled = true;
       if (user != null && user.Success && user.Result != null) {
         /* if (user.Result.DebeCambiarClave) {

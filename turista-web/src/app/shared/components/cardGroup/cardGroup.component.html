@@ -1,0 +1,26 @@
+<div class="container">
+    <!-- bajarar la posibilidad de a la hora de instanciar este componente mandarle el titulo y el tipo de cards que deberia mostrar -->
+    <div class="float-left">
+        <h2>{{title}}</h2>
+        <p>{{subTitle}}</p>
+        <button mat-button><span class="arrow-span">Ver todos <mat-icon>arrow_right_alt</mat-icon></span></button>
+    </div>
+    <!-- cambiarlo para que use la entidad que se necesita -->
+    <div class="cards">
+        <mat-card class="card" *ngFor="let card of cards">
+            <div class="sale-text" *ngIf="isSale">
+                <h2>SALE</h2>
+            </div>
+            <img class="card-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <br>
+            <mat-card-content>
+                <p>text 1</p>
+                <h1 style="color: crimson; font-weight: 500;">Titulo</h1>
+                <p>Subtitulo 1</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button><span class="arrow-span">{{reservationType == 0 ? 'Comprar' : 'Reservar'}} <mat-icon>arrow_right_alt</mat-icon></span></button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

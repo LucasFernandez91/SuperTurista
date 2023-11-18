@@ -4,7 +4,7 @@ import { Observable, catchError, firstValueFrom, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { CrudService } from './crud.service';
 import { SharedFunctions } from 'src/app/shared/shared.functions';
-import { LoginRequest } from '../model/securityRequests';
+import { LoginRequest, RegisterRequest } from '../model/securityRequests';
 
 @Injectable({
   providedIn: 'root'
@@ -30,10 +30,10 @@ export class SeguridadService extends CrudService<any, number, any, any> {
     }
   }
 
-  async register(p: LoginRequest) {
+  async register(p: RegisterRequest) {
     try {
       const datos = await firstValueFrom(
-        this._http.post<any>(this._serviceUrl + '/register', p, this.httpOptions).pipe(
+        this._http.post<any>(this._serviceUrl + '/Registro', p, this.httpOptions).pipe(
           catchError((error: HttpErrorResponse) => {
             return throwError(() => error);
           })

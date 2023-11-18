@@ -8,31 +8,75 @@
     <div class="login-box">
 
       <div class="login-box-header">
-        <mat-label>INICIO DE SESIÓN</mat-label>
+        <mat-label>REGISTRO</mat-label>
       </div>
 
       <div class="login-box-body">
 
         <form [formGroup]="formGroup">
           <mat-form-field class="example-full-width">
-            <mat-label>Usuario</mat-label>
-            <input matInput  type="text" formControlName="UserName" (keyup.enter)="login()">
+            <mat-label>Nombre</mat-label>
+            <input matInput  type="text" formControlName="Nombre" (keyup.enter)="register()">
             <mat-icon matSuffix>lock</mat-icon>
-            <mat-error *ngIf="!formGroup.controls['UserName'].valid">
+           <!--  <mat-error *ngIf="!formGroup.controls['Nombre'].valid">
               {{ getErrorUsername() }}
-            </mat-error>
+            </mat-error> -->
           </mat-form-field>
           <!-- <a style="font-size: 12px; float: right; margin-top: -10px;" [routerLink]="" (click)="openForgotUserModal()">
             <mat-label>¿Olvidaste tu usuario?</mat-label>
           </a> -->
 
           <mat-form-field class="example-full-width">
+            <mat-label>Apellido</mat-label>
+            <input matInput  type="text" formControlName="Apellido" (keyup.enter)="register()">
+            <mat-icon matSuffix>lock</mat-icon>
+            <!-- <mat-error *ngIf="!formGroup.controls['Apellido'].valid">
+              {{ getErrorUsername() }}
+            </mat-error> -->
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Telefono</mat-label>
+            <input matInput  type="text" formControlName="Telefono" (keyup.enter)="register()">
+            <mat-icon matSuffix>lock</mat-icon>
+           <!--  <mat-error *ngIf="!formGroup.controls['Telefono'].valid">
+              {{ getErrorUsername() }}
+            </mat-error> -->
+          </mat-form-field>
+          
+          <mat-form-field class="example-full-width">
+            <mat-label>Login</mat-label>
+            <input matInput  type="text" formControlName="Login" (keyup.enter)="register()">
+            <mat-icon matSuffix>lock</mat-icon>
+            <!-- <mat-error *ngIf="!formGroup.controls['Login'].valid">
+              {{ getErrorUsername() }}
+            </mat-error> -->
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput  type="text" formControlName="Email" (keyup.enter)="register()">
+            <mat-icon matSuffix>lock</mat-icon>
+            <!-- <mat-error *ngIf="!formGroup.controls['Email'].valid">
+              {{ getErrorUsername() }}
+            </mat-error> -->
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
             <mat-label>Clave</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" formControlName="Clave" (keyup.enter)="login()">
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="Password" (keyup.enter)="register()">
             <button mat-icon-button matSuffix (click)="hide = !hide" type="button"><mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon></button>
-            <mat-error *ngIf="!formGroup.controls['Clave'].valid">
+            <!-- <mat-error *ngIf="!formGroup.controls['Password'].valid">
               {{ getErrorClave() }}
-            </mat-error>
+            </mat-error> -->
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Confirmar Clave</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="ConfirmPassword" (keyup.enter)="register()">
+            <button mat-icon-button matSuffix (click)="hide = !hide" type="button"><mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon></button>
+            <!-- <mat-error *ngIf="!formGroup.controls['ConfirmPassword'].valid">
+              {{ getErrorClave() }}
+            </mat-error> -->
           </mat-form-field>
           <!-- <a style="font-size: 12px; float: right; margin-top: -10px;" [routerLink]="" (click)="openForgotPasswordModal()">
             <mat-label>¿Olvidaste tu clave?</mat-label>
@@ -41,7 +85,7 @@
 
         <br>
 
-        <button mat-raised-button class="login-button" (click)="login()" [disabled]="!buttonEnabled">
+        <button mat-raised-button class="login-button" (click)="register()" [disabled]="!buttonEnabled">
           <mat-icon>input</mat-icon> {{buttonEnabled ? 'Ingresar' : 'Ingresando...'}}
         </button>
 

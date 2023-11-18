@@ -11,7 +11,6 @@ import { DefaultComponent } from './default.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from '../pages/home/home.component';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { HeaderComponent } from '../shared/components/header/header.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
 import { DialogSetearClaveComponent } from '../auth/components/dialog-setear-clave.component';
@@ -19,6 +18,8 @@ import { DialogRegistroUsuarioComponent } from '../auth/components/dialog-regist
 import { DialogSetearClaveOlvidadaComponent } from '../auth/components/dialog-setear-clave-olvidada.component';
 import { DialogOlvidoUsuarioComponent } from '../auth/components/dialog-olvido-usuario.component';
 import { DialogOlvidoClaveComponent } from '../auth/components/dialog-olvido-clave.component';
+import { CardGroupComponent } from '../shared/components/cardGroup/cardGroup.component';
+import { MatCardModule } from '@angular/material/card';
 import { AuthComponent } from '../auth/auth.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -41,15 +42,14 @@ import { MatIconModule } from '@angular/material/icon';
     DialogSetearClaveOlvidadaComponent,
     DialogOlvidoUsuarioComponent,
     DialogOlvidoClaveComponent,
-    
+    CardGroupComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule 
-    
+    RouterModule,
   ],
 })
 export class DefaultModule { }

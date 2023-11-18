@@ -16,11 +16,11 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './shared/services/jwt.interceptor';
 import { DatePipe } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
-        
   ],
   imports: [
     BrowserModule,
@@ -33,16 +33,14 @@ import { MatDialog } from '@angular/material/dialog';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule,   
-    
+    MatListModule,
+    MatCardModule
   ],
   providers: [
     AuthGuard,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     DatePipe,
     DefaultModule,
-    
-   
   ],
   bootstrap: [AppComponent]
 })
